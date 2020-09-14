@@ -6,7 +6,7 @@
     <title>실습중</title>
 </head>
 <body>
-    <h3>2단원</h3>
+    <h1>2단원</h1>
     <ul>
         <li><script>
             document.write("환영합니다");
@@ -19,7 +19,7 @@
             document.write(box);
         </script></li>
         <li><script>
-            var tag = "<h1> String </h1>";
+            var tag = "<h6> String </h6>";
             document.write(tag);
         </script></li>
         <li><script>
@@ -95,9 +95,49 @@
         </li>
         <li>
             <script>
-                var a = 10, b = 20, m = 30, v = 40; var result;
-                result = a > b || b >= m || m>n; document.write(result, "<br>");
-                result = a > b || b >=
+                var a = 10, b = 20, m = 30, n = 40; var result;
+                result = a > b || b >= m || m > n; document.write(result, "<br>");
+                result = a > b || b >= m || m <= n; document.write(result, "<br>");
+                result = a <= b && b >= m && m <= n; document.write(result, "<br>");
+                result = a <= b && b <= m && m <= n; document.write(result, "<br>");
+                result = !(a > b); document.write(result, "<br>");
+            </script>
+        </li>
+        <li>
+            <script>
+                var a = 10, b = 3; 
+                var result = a > b ? "Javascript":"hello";
+                document.write(result);
+            </script>
+        </li>
+        <li>
+            <script>
+                var name = prompt("당신의 이름은?", "");
+                var height = prompt("당신의 신장은?", "0");
+                var weight = prompt("당신의 몸무게는?", "0");
+                var normal_w = (height - 100) * 0.9;
+                var result = weight >= normal_w - 5 && weight <= normal_w + 5;
+                result = result ? "적정 체중입니다." : "적정 체중이 아닙니다.";
+                document.write(name + "님은" + result);
+            </script>
+        </li>
+        <li>
+            <script>
+                var price1 = 3000, price2 = 6000, price3 = 3000;
+                var sum = price1 + price2 + price3
+                var result = sum > 10000;
+                result = result ? sum - 10000+"원 초과" : "돈 관리 잘했어요!";
+                document.write(result);
+            </script>
+        </li>
+        <li>
+            <script>
+                var q1 = 1200, q2 = 1300, q3 = 1000, aver = (q1 + q2 + q3) / 3
+                var amount = prompt("4분기 판매량을 입력하세요.", "");
+                var result = amount > aver;
+                result = result ? "판매량이 평균이상입니다." : "판매량이 편규 미달입니다.";
+                document.write(result);
+
             </script>
         </li>
     </ul>
