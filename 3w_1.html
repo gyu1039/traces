@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9.14 - 3주차</title>
+    <script>
+        function chk(){
+            var x = prompt("숫자를 입력하시오", "0");
+            var dis = document.querySelector('#res');
+            if (x != null) {
+                if (x%3 == 0) {
+                    document.getElementById("res").style.color = "red";
+                    dis.innerHTML = x + "=> 3의 배수입니다. 다시 체크하려면 버튼 누르세요";
+                }
+                else {
+                    document.getElementById("res").style.color = "blue";
+                    dis.innerHTML = x + "=> 3의 배수가 아닙니다. 다시 체크하려면 버튼을 누르세요.";
+                }
+            }
+        }
+    </script>
+    <style>
+        #res:hover {
+            color:darkblue;
+            background-color:white;
+            font-weight:900;
+
+        }
+    </style>
+</head>
+<body>
+    <script> // 깔끔하게 정리하세요
+        var mon = prompt("현재는 몇월입니까?(1~12)", "0");
+        
+        if (mon <= 1 && mon <=12){
+            if(mon >= 9 && mon <= 11){
+                document.write("독서의 계절 가을이네요!!");
+            }else if(mon >= 6 && mon <= 8) {
+                document.write("여행 가기 좋은 여름이네요!!");
+            }else if(mon >= 3 && mon <= 5) {
+                document.write("햇살 가득한 봄이네요!!");
+            }else {
+                document.write("스키의 계절 겨울이네요!!");
+            }
+        }
+        else {
+            document.write("잘못 입력하셨습니다.");
+        } 
+        
+    </script>
+    <script> 
+        var grade = prmopt("성적을 입력하세요", "");
+        
+        if (grade >= 0 && grade <= 100){
+            if (grade >= 90 && grade <= 100){
+                
+            }
+            else if(grade >= 80 && grade < 90) {
+                
+            }
+            else if(grade >= 70 && grade < 80) {
+
+            }
+            else if(grade >= 60 && grade < 70) {
+
+            }
+            else {
+                
+            }
+        }
+        else {
+            document.write("잘못 입력하셨습니다.");
+        }    
+    </script>
+    <script>
+        var id = "easy1004";
+        var pw = "112233";
+
+        var  user_id = prompt("아이디를 입력하세요","easy1004");
+        if (user_id == id) {
+            var user_pw = prompt("비밀번호를 입력하세요.","112233");
+            if(user_pw == pw){
+                document.write(user_id + "님 반갑습니다.");
+            }
+            else {
+                alert("비밀번호가 일치하지 않습니다");
+                location.reload();
+            }
+        } else {
+            alert("아이디가 일치하지 않습니다.");
+            location.reload();
+        }
+    </script>
+    <button id = "res" onclick="chk()">3의 배수 체크하려면 버튼을 클릭하세요</button>
+
+    <ul>
+        <li> getElementById(id)</li>
+        <li> getElementsByTagName(id)</li>
+        <li> getElementsByClassName(id)</li>
+        <li> querySelector(selector)</li>
+        <li> querySelectorAll(id)</li>
+    </ul>
+
+    <p id="res"><em>이것은</em><b id="bb">문단</b>이다. <strong>1234</strong></p><hr>
+    <strong>strong2</strong><hr><strong>strong3</strong>
+    <button id="btn" onclick="fn()">누르면 배경색 바뀜</button>
+    
+    <script>
+        document.getElementById("bb").style.color = "red";
+        var n = 0; // 누른 횟수
+        function fn() {
+            n++; // 누를 때마다 n이 1씩 증가
+            var xx = document.getElementById("btn");
+            var s = document.getElementsByTagName("strong");
+            //var dis = document.querySelector('');
+            if (n%2 == 1) {
+                xx.style.backgroundColor="yellow";
+                s[0].style.color = "cyan"; //1234
+                s[1].style.color = "green"; //strong2
+                s[2].style.color = "blue"; //strong3
+               
+            }
+            else {
+                xx.style.backgroundColor="green";
+                s[0].style.color = "green"; //1234
+                s[1].style.color = "blue"; //strong2
+                s[2].style.color = "cyan"; //strong3
+            }
+        }
+    </script>
+
+
+</body>
+</html>
