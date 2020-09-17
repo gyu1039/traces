@@ -29,7 +29,7 @@
         }
     </style>
 </head>
-<body>
+<body id="bod">
     <script> // 깔끔하게 정리하세요
         var mon = prompt("현재는 몇월입니까?(1~12)", "0");
         
@@ -72,8 +72,8 @@
 
     <ul>
         <li> getElementById(id)</li>
-        <li> getElementsByTagName(id)</li>
-        <li> getElementsByClassName(id)</li>
+        <li> getElementsByTagName(tag)</li>
+        <li> getElementsByClassName(class)</li>
         <li> querySelector(selector)</li>
         <li> querySelectorAll(id)</li>
     </ul>
@@ -88,19 +88,22 @@
         function fn() {
             n++; // 누를 때마다 n이 1씩 증가
             var xx = document.getElementById("btn");
-            var s = document.getElementsByTagName("strong");
-            //var dis = document.querySelector('');
+            var s = document.getElementsByTagName("strong"); //s[index];
+            var y = document.getElementById("bod");
+            var dis = document.querySelector('#hr1'); // #-ID, .-class
             if (n%2 == 1) {
                 xx.style.backgroundColor="yellow";
+                y.style.backgroundColor="blue";
                 s[0].style.color = "cyan"; //1234
                 s[1].style.color = "green"; //strong2
-                s[2].style.color = "blue"; //strong3
+                s[2].style.color = "white"; //strong3
                
             }
             else {
                 xx.style.backgroundColor="green";
+                y.style.backgroundColor="purple";
                 s[0].style.color = "green"; //1234
-                s[1].style.color = "blue"; //strong2
+                s[1].style.color = "gray"; //strong2
                 s[2].style.color = "cyan"; //strong3
             }
         }
