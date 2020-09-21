@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4주차-1</title>
+    <style>
+        *{margin: 100;}
+        .red{color: #f00;}
+        .blue{color: #00f;}
+        .aqua{color: #0ff;}
+    </style>
+</head>
+<body>
+    <script>
+        for(var i = 1; i <= 100; i++) {
+            if (i%5 == 0 && i%7 != 0) {
+                document.write("<span class='red'>"+i+"</span>");
+            }else if(i%7 == 0 && i%5 != 0) {
+                document.write("<span class='blue'>" + i + "</span>");
+            } else if(i%7 == 0 && i%5 ==0) {
+                document.write("<span class='aqua'>"+ i + "</span>");
+            }
+        }
+    </script>
+
+    <script>
+        for(var i=2; i<= 9; i++) {
+            document.write("<div>");
+            document.write("<h3>" + i + "단</h3>");
+            for(var j=1; j<=9; j++) {
+                document.write(i + " X " + j + " = " + i*j + "<br>");
+            }
+            document.write("</div>");
+        }
+    </script>
+    <br>
+    <script>
+       for( var i=1; i<=5; i++) {
+            for(var k=1; k<=3; k++) {
+                document.write(i + "행" + k + "열 &nbsp &nbsp ");
+            }
+            document.write("<br>");
+       } 
+    </script>
+    <hr>
+    <script>
+        var n = prompt("숫자를 입력하세요.");
+        var nFact= 1;
+        var i = 2;
+        /*while (i<=n) {
+            nFact*=i;
+            i++;
+        }*/
+        for (var i=2; i<=n; i++) {
+            nFact *= i; 
+        }
+        document.write("<div>"+ n + "!= " + nFact + "</div>");
+    </script>
+    <hr>
+    <script>
+        var hap = 0; //for문 합 구하기 초기화
+        for(var i=1; i<=100; i++) {
+            hap+=i;
+        }
+        document.write("1~100까지 합(for문 사용)= " + hap + "<hr>");
+        
+        var sum = 0; //while문 합 구하기 초기화
+        i=0;
+        while(i<=100){
+           sum+=i;
+           i++; 
+        }
+        document.write("1~100까지 합(while문 사용)= " + sum + "<hr>");
+    </script>
+    <hr>
+    <script>
+        var i = 2;
+        do {
+            document.write("hello");
+            i++;
+        } while(i<3)
+    </script>
+    <hr>
+    <script>
+        for(var i=1; i<=10; i++) {
+            if(i == 6) break;
+            document.write(i,"&nbsp")
+        }
+        document.write("break!");
+    </script>
+    <hr>
+    <script>
+        for(var i=1; i<=10; i++) {
+            if(i%2 != 0) continue;
+            document.write(i, "&nbsp");
+        }
+        document.write("continue");
+    </script>
+    <hr>    
+    <script>
+        var tv = new Object();
+        tv.color = "white";
+        tv.price = 300000;
+        tv.info = function() {
+            document.write("tv 색상: " + this.color, "<br>");
+            document.write("tv 가격: " + this.price, "<br>");
+        }
+        var car = {
+            color: "black",
+            price: 5000000,
+            info: function() {
+                document.write("car 색상: " + this.color, "<br>");
+                document.write("car 가격: " + this.price, "<br>");            
+            }
+        };
+        document.write("<h1>tv 객체 메서드 호출</h1>");
+        tv.info();
+        document.write("<h1>car 객체 메서드 호출</h1>");
+        car.info();
+        document.write("차 가격= " + car.price);
+    </script>
+
+    <hr>
+    <script>
+        var today = new Date();
+        var nowMonth = today.getMonth();
+        var nowDate = today.getDate();
+        var nowDay = today.getDay();
+        document.write("<h1>오늘 날짜 정보</h1>");
+        document.write("현재 월: "+ nowMonth, "<br>");
+        document.write("현재 일: " + nowDate, "<br>");
+        document.write("현재 요일: " + nowDay, "<br>");
+
+        var worldcup = new Date(2002, 4, 31);
+        var theMonth = worldcup.getMonth();
+        var theDate = worldcup.getDate();
+        var theDay = worldcup.getDay();
+        document.write("<h1>월드컵 날짜 정보</h1>");
+        document.write("20020월드컵 몇 월: " + theMonth, "<br>");
+        document.write("2002월드컵 몇 일: " + theDate, "<br>");
+        document.write("2002월드컵 무슨 요일: " + theDay, "<br>");
+    </script>
+    <hr>
+
+    <script>
+        var today = new Date();
+        var nowYear = today.getFullYear();
+        var theDate = new Date(nowYear, 11, 31);
+        var diffDate = theDate.getTime() - today.getTime();
+        var result = Math.ceil(diffDate / (60 * 1000 * 60 *24));
+        // ceil : 올림, floor : 내림, round:반올림
+    </script>
+</body>
+</html>
