@@ -8,12 +8,10 @@
 <body>
     <script>
         var arr = [30, "따르릉", true];
-
         document.write("<h3>배열값 가져오기-1</h3>");
         document.write(arr[0], "<br>");
         document.write(arr[1], "<br>");
         document.write(arr[2], "<br>");
-        
         document.write("<h3>배열값 가져오기-2</h3>");
         for(var i=0; i<arr.length; i++) {
             document.write(arr[i], "<br>");
@@ -23,7 +21,14 @@
             document.write(arr[i], "<br>");
         }
     </script>
-
+    <br><hr>
+    <h2>배열 객체 함수들 - console을 확인하세요</h2>
+    <ul>
+        <span style="font-weight:1.5em">
+            <li>join, concat, slice, sort, reverse, splice,pop,
+            shift,unshift
+        </li></span>
+    </ul>
     <script>
         var arr_1 = ["연암공대","기획처","교무처","학생처","취업처","사무처"];
         var arr_2 = ["전기전자", "소프트웨어", "기계"];
@@ -48,18 +53,16 @@
     <script>
         var greenArr = ["교대", "방배", "강남"];
         var yellowArr = ["미금", "정자", "수서"];
-
-        greenArr.splic(2,1,"서초", "역삼");
+        greenArr.splice(2,1,"서초", "역삼");
         document.write(greenArr + "<br>");
-
         var data1 = yellowArr.pop();
             document.write(yellowArr + "<br>");
         var data2 = yellowArr.shift();
             document.write(yellowArr + "<br>");
         yellowArr.push(data2);
-        document.write(yellowArr + "<br>");
+            document.write(yellowArr + "<br>");
         yellowArr.unshift(data1);
-        document.write(yellowArr + "<br>");
+            document.write(yellowArr + "<br>");
     </script>
 </body>
 </html>

@@ -3,26 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>실습중</title>
+    <title>기초 문법, 변수, 연산자</title>
 </head>
 <body>
     <h1>2주차</h1>
     <ul>
-        <li><script>
+        <h2> 출력 및 변수,연산자 사용</h2>
+        <span style="font-size:1.5em">기초문법</span><br>
+        <li>
+            <script>
             document.write("환영합니다");
-        </script>
-        <br><script src=""></script></li>
-        <li><script>
             var box;
             box = 100;
             box = 30;
             document.write(box);
-        </script></li>
-        <li><script>
-            var tag = "<h6> String </h6>";
+            var tag = "<span style=font-size:1.5em> String </span> <br>";
             document.write(tag);
-        </script></li>
-        <li><script>
             var a = true;
             var b = false;
             var c = 10 > 5;
@@ -31,14 +27,12 @@
             document.write(b, "<br>");
             document.write(c, "<br>");
             document.write(d, "<br>");
-        </script></li>
-        <li><script>
             var num = 100;
             var str = "자바스크립트";
             document.write(typeof num, "<br>");
             document.write(typeof str);
-        </script></li>
-        <li>
+            </script>
+            <br>연산자 사용<br>
             <script>
             var num1 = 15, num2 = 2; var result;
             result = num1 + num2; document.write(result,"<br>");
@@ -48,14 +42,11 @@
             result = num1 % num2; document.write(result,"<br>");
             </script>
         </li>
+        <br><span style="font-size:1.5em">서로 다른 자료형의 연산과 복합연산</span><br>
         <li>
             <script>
                 var t1 = "학교종이", t2 = "떙땡떙", t3 = 8282, t4 = "어서모이자"; var result;
                 result = t1 + t2 + t3 + t4; document.write(result);
-            </script>
-        </li>
-        <li>
-            <script>
                 var num1 = 10, num2 = 3;
                 num1 += num2; document.write(num1, "<br>");
                 num1 -= num2; document.write(num1, "<br>");
@@ -63,6 +54,7 @@
                 num1 %= num2; document.write(num1, "<br>");
             </script>
         </li>
+        <br><span style="font-size:1.5em">1행짜리 표</span><br>
         <li>
             <script>
                 var str = "<table border='1'>";
@@ -73,6 +65,7 @@
                 document.write(str);
             </script>
         </li>
+        <br><span style="font-size:1.5em">단항연산자 사용</span><br>
         <li>
             <script>
                 var num1 = 10, num2 = 20; var result;
@@ -82,6 +75,7 @@
                 result = ++num2; document.write(result, "<br>");
             </script>
         </li>
+        <br><span style="font-size:1.5em">비교연산자 사용</span><br>
         <li>
             <script>
                 var a = 10, b = 20, c = 10; f = "20"; var result;
@@ -93,6 +87,7 @@
                 result = b === f; document.write(result, "<br>");
             </script>
         </li>
+        <br><span style="font-size:1.5em">논리연산자 사용</span><br>
         <li>
             <script>
                 var a = 10, b = 20, m = 30, n = 40; var result;
@@ -103,6 +98,7 @@
                 result = !(a > b); document.write(result, "<br>");
             </script>
         </li>
+        <br><span style="font-size:1.5em">삼항연산자 사용</span><br>
         <li>
             <script>
                 var a = 10, b = 3; 
@@ -110,8 +106,10 @@
                 document.write(result);
             </script>
         </li>
-        <li>
+        <br><span style="font-size:1.5em">적정체중판별</span><br>
+        <button type="button" formtarget="_blank" onclick="func()">click</button>
             <script>
+                function func(){
                 var name = prompt("당신의 이름은?", "");
                 var height = prompt("당신의 신장은?", "0");
                 var weight = prompt("당신의 몸무게는?", "0");
@@ -119,15 +117,15 @@
                 var result = weight >= normal_w - 5 && weight <= normal_w + 5;
                 result = result ? "적정 체중입니다." : "적정 체중이 아닙니다.";
                 document.write(name + "님은" + result);
+                }
             </script>
-        </li>
         <li>
-            <a href="cm2_1.html">2장 연습문제1</a>
-            <a href="cm2_2.html">2장 연습문제2</a>
+            <a href="2w_1_ex1.html">2장 연습문제1</a>
+            <a href="2w_1_ex2.html">2장 연습문제2</a>
         </li>
 
         <li>
-            <a href="inline.html">인라인 자바스크립트</a>
+            <a href="2w_inline.html">인라인 자바스크립트</a>
         </li>
     </ul>
 

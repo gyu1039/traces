@@ -4,6 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>9.14 - 3주차</title>
+    <style>
+        #res:hover {
+            color:darkblue;
+            background-color:white;
+            font-weight:900;
+
+        }
+    </style>
+</head>
+<body id="bod">
+    
+    <button type="button" formtarget="_blank" onclick="func1()">선택문 사용 예제(독서의 계절)</button>
+    <script>
+        function func1() {
+        var mon = prompt("현재는 몇월입니까?(1~12)", "0");
+        
+        if (mon >= 1 && mon <=12){
+            if(mon >= 9 && mon <= 11){
+                confirm("독서의 계절 가을이네요!!");
+            }else if(mon >= 6 && mon <= 8) {
+                confirm("여행 가기 좋은 여름이네요!!");
+            }else if(mon >= 3 && mon <= 5) {
+                confirm("햇살 가득한 봄이네요!!");
+            }else {
+                confirm("스키의 계절 겨울이네요!!");
+            }
+        }
+        else {
+            alert("잘못 입력하셨습니다.");
+            location.reload()
+        } 
+    }
+    </script>
+    
+    <button type="button" onclick="func2()">선택문 사용 예제(아이디와 비번)</button>
+    <script>
+        function func2() {
+            var id = "easy1004";
+            var pw = "112233";
+
+            var  user_id = prompt("아이디를 입력하세요","easy1004");
+            if (user_id == id) {
+                var user_pw = prompt("비밀번호를 입력하세요.","112233");
+                if(user_pw == pw){
+                    confirm(user_id + "님 반갑습니다.");
+                }
+                else {
+                    alert("비밀번호가 일치하지 않습니다");
+                    location.reload();
+                }
+            } else {
+                alert("아이디가 일치하지 않습니다.");
+                location.reload();
+            }
+        }
+    </script>
+
+    <button id ="res" onclick="chk()">3의 배수 체크하려면 버튼을 클릭하세요</button>
     <script>
         function chk(){
             var x = prompt("숫자를 입력하시오", "0");
@@ -19,57 +77,9 @@
                 }
             }
         }
-    </script>
-    <style>
-        #res:hover {
-            color:darkblue;
-            background-color:white;
-            font-weight:900;
+    </script><br><br>
 
-        }
-    </style>
-</head>
-<body id="bod">
-    <script> // 깔끔하게 정리하세요
-        var mon = prompt("현재는 몇월입니까?(1~12)", "0");
-        
-        if (mon >= 1 && mon <=12){
-            if(mon >= 9 && mon <= 11){
-                document.write("독서의 계절 가을이네요!!");
-            }else if(mon >= 6 && mon <= 8) {
-                document.write("여행 가기 좋은 여름이네요!!");
-            }else if(mon >= 3 && mon <= 5) {
-                document.write("햇살 가득한 봄이네요!!");
-            }else {
-                document.write("스키의 계절 겨울이네요!!");
-            }
-        }
-        else {
-            document.write("잘못 입력하셨습니다.");
-        } 
-        
-    </script>
-    <script>
-        var id = "easy1004";
-        var pw = "112233";
-
-        var  user_id = prompt("아이디를 입력하세요","easy1004");
-        if (user_id == id) {
-            var user_pw = prompt("비밀번호를 입력하세요.","112233");
-            if(user_pw == pw){
-                document.write(user_id + "님 반갑습니다.");
-            }
-            else {
-                alert("비밀번호가 일치하지 않습니다");
-                location.reload();
-            }
-        } else {
-            alert("아이디가 일치하지 않습니다.");
-            location.reload();
-        }
-    </script>
-    <button id = "res" onclick="chk()">3의 배수 체크하려면 버튼을 클릭하세요</button>
-
+    <span style="font-size:1.5em">Document Methods</span>
     <ul>
         <li> getElementById(id)</li>
         <li> getElementsByTagName(tag)</li>
@@ -78,19 +88,21 @@
         <li> querySelectorAll(id)</li>
     </ul>
 
-    <p id="res"><em>이것은</em><b id="bb">문단</b>이다. <strong>1234</strong></p><hr>
-    <strong>strong2</strong><hr><strong>strong3</strong>
+
+    <p id="res"><em>이것은</em><b id="bb">문단</b>이다. (커서를 올려보세요)<strong>1234</strong></p>
+    <strong>strong2</strong><strong>strong3</strong>
+
     <button id="btn" onclick="fn()">누르면 배경색 바뀜</button>
-    
+    <button id="cb" onclick="cfn()">화면 원래대로 돌리기</button>
     <script>
         document.getElementById("bb").style.color = "red";
+        var xx = document.getElementById("btn");
+        var s = document.getElementsByTagName("strong"); //s[index];
+        var y = document.getElementById("bod");
+        var dis = document.querySelector('#hr1'); // #-ID, .-class
         var n = 0; // 누른 횟수
         function fn() {
             n++; // 누를 때마다 n이 1씩 증가
-            var xx = document.getElementById("btn");
-            var s = document.getElementsByTagName("strong"); //s[index];
-            var y = document.getElementById("bod");
-            var dis = document.querySelector('#hr1'); // #-ID, .-class
             if (n%2 == 1) {
                 xx.style.backgroundColor="yellow";
                 y.style.backgroundColor="blue";
@@ -106,6 +118,14 @@
                 s[1].style.color = "gray"; //strong2
                 s[2].style.color = "cyan"; //strong3
             }
+        }
+
+        function cfn() {
+            y.style.backgroundColor="white";
+            y.style.color = "black";
+            s[0].style.color = "black"; //1234
+            s[1].style.color = "black"; // strong2
+            s[2].style.color = "black"; //strong3
         }
     </script>
 

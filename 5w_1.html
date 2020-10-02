@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5주차</title>
+</head>
+<body id="bb">
+    <script>
+    var addNum = 0;
+    var subNum = 1000;
+
+    var auto_1 = setInterval(function() {
+        addNum++;
+        if (addNum%3==1) { document.getElementById('bb').
+        style.backgroundColor="yellow";}
+        else if(addNum%3==2) {document.getElementById('bb').
+        style.backgroundColor="cyan";}
+        else {document.getElementById('bb').
+        style.backgroundColor="lightgray";}
+        console.log("addNum: " + addNum);
+    }, 1000);
+
+    var auto_2 = setInterval(function() {
+        subNum--;
+        console.log("subNum: " + subNum);
+    }, 1000);
+    </script>
+    <h1>일정 시간 간격으로 값 증감시키기</h1>
+    <p> 콘솔 패널을 열어 확인하세요.</p>
+    <button onclick="clearInterval(auto_1)">증가 정지</button> 
+    <button onclick="clearInterval(auto_2)">감소 정지</button>
+    <br><hr>
+
+    <script>
+        var i=0;
+        var sum=0;
+        var aaa = setTimeout(function() {
+            while(i<100) {
+                i++;
+                sum+=i;
+                console.log(i + "번째 합=" + sum);}
+        }, 5000)
+    </script>
+    <button onclick="clearTimeout(aaa)">타이머 정지</button>
+    
+    <h2>수학 객체 메소드 사용</h2>
+    <script>
+        var num = 2.1234;
+
+        var maxNum = Math.max(10,5,8,30),
+        minNum = Math.min(10,5,8,30),
+        roundNum = Math.round(num),
+        floorNum = Math.floor(num),
+        ceilNum = Math.ceil(num);
+        rndNum = Math.random(),
+        piNum = Math.PI;
+
+        document.write(maxNum, "&nbsp");
+        document.write(minNum, "&nbsp");
+        document.write(roundNum, "&nbsp");
+        document.write(floorNum, "&nbsp");
+        document.write(ceilNum, "&nbsp");
+        document.write(rndNum, "&nbsp");
+        document.write(piNum, "&nbsp");
+    </script>
+    <hr>
+    <button onclick="fun()">컴퓨터 가위,바위, 보 맞추기</button>
+    <script>
+        function fun() {
+            var game = prompt("가위, 바위, 보 중 선택하세요.", "가위");
+            var gameNum;
+            switch(game) {
+                case "가위":
+                    gameNum = 1; break;
+                case "바위":
+                    gameNum = 2; break;
+                case "보":
+                    gameNum = 3; break;
+            defaul: alert("잘못 입력했습니다.");
+                    location.reload();
+            }
+            
+            var com = Math.ceil(Math.random()*3);
+
+            if (gameNum == com) {
+                confirm("맞췄습니다.");
+            } else {
+                confirm("아쉽습니다.");
+            }
+        }
+    </script>
+    <hr>
+    <h2>배열 객체</h2>
+    <script>
+        var A = [1,2,3,4,5,6,"LG그룹"];
+        C = [1,"연암",2,"공대",3];
+        document.write("A=" + A + "<br>");
+        document.write("C=" + C + "<br>");
+        C[10] = 10;
+        document.write("C=" + C + "<hr>");
+
+        for(var i=0; i<C.length; i++) {
+            document.write(i+ " : " + C[i] + "<br>"); 
+        }
+        document.write("<hr>");
+        for (var i in C) {
+            document.write(i + " : " + C[i] + "<br>");
+        }
+        document.write("lenght of C=" + C.length);
+    </script>
+    <br>
+    <script>
+        var result = A.join("-");
+        console.log(result);
+        result = A.concat(C);
+        console.log(result);
+        result = A.slice(1,3);
+        console.log(result);
+        A.sort();
+        console.log(A);
+        C.reverse();
+        console.log(C);
+        B=C.splice(6,3);
+        console.log(B);
+        console.log(C);
+        C.shift()
+        console.log(C);
+        C.unshift(1);
+        console.log(C);
+    </script>
+    <hr>
+    <h2>정렬 제대로 하기 - 익명함수</h2>
+    <script>
+        var sortA=[1,2,3,4,5,6];
+        var sortB=[100,-20,0,11,15,200,600,66,6];
+        document.write("원 배열 B= "+sortB+"<br>");
+        sortB.sort();
+        document.write("단순 정렬시 오름차순인데 문자 base한 sort B="+ sortB + "<br>");
+        sortB.sort(function(left,right) {
+            return left-right; } );
+        document.write("ascending sort된 B= " + sortB + "<br>");
+        sortB.sort(function(left,right) {
+        return right-left;} );
+        document.write("descending sort된 B= " + sortB + "<br>");
+         
+    </script>
+</body>
+</html>

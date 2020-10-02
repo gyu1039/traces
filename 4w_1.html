@@ -12,18 +12,19 @@
     </style>
 </head>
 <body>
+    <h2>반복문과 클래스</h2>
     <script>
         for(var i = 1; i <= 100; i++) {
             if (i%5 == 0 && i%7 != 0) {
-                document.write("<span class='red'>"+i+"</span>");
+                document.write("<span class='red'>"+i+"</span>&nbsp");
             }else if(i%7 == 0 && i%5 != 0) {
-                document.write("<span class='blue'>" + i + "</span>");
+                document.write("<span class='blue'>" + i + "</span>&nbsp");
             } else if(i%7 == 0 && i%5 ==0) {
-                document.write("<span class='aqua'>"+ i + "</span>");
+                document.write("<span class='aqua'>"+ i + "</span>&nbsp");
             }
         }
     </script>
-
+    <h2>구구단</h2>
     <script>
         for(var i=2; i<= 9; i++) {
             document.write("<div>");
@@ -35,6 +36,7 @@
         }
     </script>
     <br>
+    <h2>행과 열</h2>
     <script>
        for( var i=1; i<=5; i++) {
             for(var k=1; k<=3; k++) {
@@ -44,26 +46,29 @@
        } 
     </script>
     <hr>
+    <button onclick="fun()">팩토리얼 구하기</button>
     <script>
-        var n = prompt("숫자를 입력하세요.");
-        var nFact= 1;
-        var i = 2;
-        /*while (i<=n) {
-            nFact*=i;
-            i++;
-        }*/
-        for (var i=2; i<=n; i++) {
-            nFact *= i; 
+        function fun() {
+            var n = prompt("숫자를 입력하세요.");
+            var nFact= 1;
+            var i = 2;
+            /*while (i<=n) {
+                nFact*=i;
+                i++;
+            }*/
+            for (var i=2; i<=n; i++) {
+                nFact *= i; 
+            }
+            confirm(n + "!= " + nFact );
         }
-        document.write("<div>"+ n + "!= " + nFact + "</div>");
     </script>
-    <hr>
+    <h2>for문 & while문 합 구하기</h2>
     <script>
         var hap = 0; //for문 합 구하기 초기화
         for(var i=1; i<=100; i++) {
             hap+=i;
         }
-        document.write("1~100까지 합(for문 사용)= " + hap + "<hr>");
+        document.write("1~100까지 합(for문 사용)= " + hap + "<br>");
         
         var sum = 0; //while문 합 구하기 초기화
         i=0;
@@ -71,9 +76,9 @@
            sum+=i;
            i++; 
         }
-        document.write("1~100까지 합(while문 사용)= " + sum + "<hr>");
+        document.write("1~100까지 합(while문 사용)= " + sum + "<br>");
     </script>
-    <hr>
+    <h2>조건식 & braek문 & continue문 </h2>
     <script>
         var i = 2;
         do {
@@ -81,7 +86,7 @@
             i++;
         } while(i<3)
     </script>
-    <hr>
+    <br>
     <script>
         for(var i=1; i<=10; i++) {
             if(i == 6) break;
@@ -89,7 +94,7 @@
         }
         document.write("break!");
     </script>
-    <hr>
+    <br>
     <script>
         for(var i=1; i<=10; i++) {
             if(i%2 != 0) continue;

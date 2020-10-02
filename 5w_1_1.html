@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5w_1_1</title>
+</head>
+<body>
+    <h2>문자열 객체 이용(substring,replace 메소드)</h2>
+    <script>
+        var phoneNum = "010-1234-1234";
+        var result_1 = phoneNum.substring(0,9);
+        document.write(result_1, "**** <br>");
+
+        var imgSrc = "images/bnt_out.jpg";
+        var result_2 = imgSrc.replace("out","over");
+        document.write(result_2, "<br>");
+    </script>
+    
+    <script>
+        function func() {
+        var menu = new Array("짜장면","돈가스","된장국","김치찌개","회덮밥");
+        var menuNum = Math.floor(Math.random()*menu.length);
+        var result = menu[menuNum];
+        confirm(result);
+        }
+    </script>
+    <hr>
+    <button onclick="func()">점심메뉴 램던 선택</button>
+</body>
+</html>

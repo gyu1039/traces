@@ -6,29 +6,32 @@
     <title>과제</title>
 </head>
 <body>
+    <button onclick="func()">성적 입력</button>
     <script> 
-        var grade = prompt("성적을 입력하세요 (1~100)", "");
-        
-        if (grade >= 0 && grade <= 100){
-            if (grade >= 90 && grade <= 100){
-                document.write("A입니다.");
-            }
-            else if(grade >= 80 && grade < 90) {
-                document.write("B입니다.");
-            }
-            else if(grade >= 70 && grade < 80) {
-                document.write("C입니다.");     
-            }
-            else if(grade >= 60 && grade < 70) {
-                document.write("D입니다.");     
+        function fun(){
+            var grade = prompt("성적을 입력하세요 (1~100)", "");
+            if (grade >= 0 && grade <= 100){
+                if (grade >= 90 && grade <= 100){
+                    confirm("A입니다.");
+                }
+                else if(grade >= 80 && grade < 90) {
+                    confirm("B입니다.");
+                }
+                else if(grade >= 70 && grade < 80) {
+                    confirm("C입니다.");     
+                }
+                else if(grade >= 60 && grade < 70) {
+                    confirm("D입니다.");     
+                }
+                else {
+                    confirm("F입니다.");
+                }
             }
             else {
-                document.write("F입니다.");
-            }
-        }
-        else {
-            document.write("잘못 입력하셨습니다.");
-        }    
+                confirm("잘못 입력하셨습니다.");
+                location.reload();
+            }   
+        } 
     </script>
 </body>
 </html>
