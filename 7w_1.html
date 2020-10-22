@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2019년 실기문제</title>
+    <script>
+        function changeCase(x) {
+            var n =0;
+            var hap =0;
+            var pp=document.getElementById('pp');
+            pp.innerHTML="";
+            if(x==3) {
+                pp.style.backgroundColor = "cyan";
+                for(var i=1; i<=50; i++) {
+                    if(i % 3 == 0) {
+                        n++;
+                        hap+=i;
+                        pp.innerHTML+= i +", ";
+                    }
+                }
+                pp.innerHTML += "<hr> 합=" + hap;
+                pp.innerHTML += "<br>개수=" + n;   
+            }
+            if(x==5){
+                pp.style.backgroundColor = "yellow"
+                for(var i=1; i<=50; i++) {
+                    if(i % 5 == 0) {
+                        n++;
+                        hap+=i;
+                        pp.innerHTML+= i +", ";
+                    }
+                }
+                pp.innerHTML += "<hr> 합=" + hap;
+                pp.innerHTML += "<br>개수=" + n;  
+            }
+        }
+    </script>
+</head>
+<body>
+    <p id="pp">여기에 결과를 표시함!</p>
+    <input type="radio" name="C1" value="v1" onclick="changeCase(3)">3의배수
+    <input type="radio" name="C1" value="v2" onclick="changeCase(5)">5의배수
+</body>
+</html>
