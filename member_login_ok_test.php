@@ -10,7 +10,7 @@
         'seoul' => array("pw" => '56789', 'name' => '홍대리')
     );
 
-    if(isset($memberse[$user_id]) &&
+    if(isset($members[$user_id]) &&
     $members[$user_id]['pw'] == $user_pw) {
         echo '{"user_id":"'.$user_id.'",
             "user_name":"'.$members[$user_id]['name'].'"}';
